@@ -9,7 +9,11 @@ ATOP stands for Assess The One Who Profess. It is a mobile application designed 
   * Chair/Assistant to the Chair: It is the responsibility of these designated officers to receive the evaluation packet from the student and evaluate the responses.
 
 * **Technologies Used**
+ * Flutter: To desgin the mobile application
+ * Dart: Web Server
+ * MonoDB: Database
 
 * **Architecture** 
+![Architecture](https://github.com/shrutijain18/ATOP/blob/master/Images/Architecture.png)
 
 ## Instructions for how to develop, use, and test the code.
