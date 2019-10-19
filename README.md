@@ -8,10 +8,10 @@ ATOP stands for Assess The One Who Profess. It is a mobile application designed 
   :busts_in_silhouette: Professor: The professor carries and ditributes the evaluation form during the last day of the class. A student from the class collects and submits the evaluation to the Assistant of the Department after the students fill out the evaluation. \
   :busts_in_silhouette: Chair/Assistant to the Chair: It is the responsibility of these designated officers to receive the evaluation packet from the student and evaluate the responses.
 
-* **Technologies Used**
- * Flutter: To desgin the mobile application
- * Dart: Web Server
- * MonoDB: Database
+* **Technologies Used** \
+ :computer: Flutter: To desgin the mobile application \
+ :computer: Dart: Web Server \
+ :computer: MonoDB: Database
 
 * **Architecture** 
 ![Architecture](https://github.com/shrutijain18/ATOP/blob/master/Images/Architecture.png)
