@@ -14,7 +14,7 @@ ATOP stands for Assess The One Who Profess. It is a mobile application designed 
  :computer: MonoDB: Database
 
 * **Architecture** 
-![Architecture](https://github.com/shrutijain18/ATOP/blob/master/Images/Architecture.png =100)
+![Architecture](https://github.com/shrutijain18/ATOP/blob/master/Images/Architecture.png =100x)
 
 ## Instructions for how to develop, use, and test the code.
 :mega: To be disclosed
