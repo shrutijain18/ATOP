@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
-import 'home/homeScreen.dart';
-/*import './student/surveyQuestions.dart';*/
 
-void main() {
-  runApp(MaterialApp(
-    title: 'Navigation Basics',
-    home: Homescreen(),
-  ));
-}
-/*
-class MyApp extends StatefulWidget {
+import './surveyQuestions.dart';
+
+class Studentmainscreen extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    //TODO: implement createState
-    return Homescreen();
-  }
+  _StudentmainscreenState createState() => _StudentmainscreenState();
 }
-class _MyAppState extends State {
+
+class _StudentmainscreenState extends State<Studentmainscreen> {
   final _questions = [
     {
       'questionText':
@@ -88,4 +79,3 @@ class _MyAppState extends State {
     );
   }
 }
-*/
