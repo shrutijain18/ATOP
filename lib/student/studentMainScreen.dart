@@ -13,7 +13,7 @@ class _StudentmainscreenState extends State<Studentmainscreen> {
       'questionText':
           'Please rate your overall satisfaction with your Professor.',
       'answers': [
-        'Very Satisfied',
+        'Very Dissatisfied',
         'Dissatisfied',
         'Neutral',
         'Satisfied',
@@ -54,14 +54,27 @@ class _StudentmainscreenState extends State<Studentmainscreen> {
     },
   ];
   var _questionIndex = 0;
+  String radioGroupValue;
   void _answerQuestion(val) {
-    print(val);
     setState(() {
-      _questionIndex++;
+      radioGroupValue = val;
+    });
+
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      setState(() {
+        _questionIndex++;
+        radioGroupValue = "";
+      });
     });
     //  print("Answer chosen!!");
     print(_questionIndex);
     // return _questionIndex;
+  }
+
+  _navigateQuestion(val) {
+    setState(() {
+      _questionIndex++;
+    });
   }
 
   @override
@@ -72,9 +85,10 @@ class _StudentmainscreenState extends State<Studentmainscreen> {
             title: Text("Assess the one who Profess"),
           ),
           body: _questionIndex < _questions.length
-              ? Survey(_questions, _questionIndex, _answerQuestion)
+              ? Survey(_questions, _questionIndex, _answerQuestion,
+                  radioGroupValue, _navigateQuestion)
               : Center(
-                  child: Text("No More Questions"),
+                  child: Text("Thank you for your time"),
                 )),
     );
   }
