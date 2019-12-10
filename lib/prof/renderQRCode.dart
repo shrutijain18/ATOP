@@ -13,14 +13,14 @@ class RenderQRCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('QR Code'),
+        title: Text(dept + '.' + course + '.' + section), centerTitle: true,
       ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             QrImage(
-              data: this.dept + this.course + this.section,
+              data: dept + '.' + course + '.' + section,
               version: QrVersions.auto,
               size: 250.0,
             ),

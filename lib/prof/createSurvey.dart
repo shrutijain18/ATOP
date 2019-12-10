@@ -21,7 +21,7 @@ class SurveyState extends State<CreateSurvey> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Survey'),
+        title: Text('Create Survey'), centerTitle: true,
       ),
       body: Form(
         key: _formKey,
@@ -39,7 +39,7 @@ class SurveyState extends State<CreateSurvey> {
                 // Save DEPT in database?
               },
               validator: (String value) {
-                return value.isEmpty ? 'Do not use the @ char.' : null;
+                return value.isEmpty ? 'Field is required' : null;
               },
             ),
             TextFormField(
@@ -53,7 +53,7 @@ class SurveyState extends State<CreateSurvey> {
                 course = value;
               },
               validator: (String value) {
-                return value.isEmpty ? 'Do not use the @ char.' : null;
+                return value.isEmpty ? 'Field is required' : null;
               },
             ),
             TextFormField(
@@ -68,12 +68,11 @@ class SurveyState extends State<CreateSurvey> {
                 print('saved $section');
               },
               validator: (String value) {
-                return value.isEmpty ? 'Do not use the @ char.' : null;
+                return value.isEmpty ? 'Field is required' : null;
               },
             ),
             RaisedButton(
               onPressed: () {
-                print('button pressed');
                 if (_formKey.currentState.validate()) {
                   // If the form is valid, display a Snackbar.
                   _formKey.currentState.save();
@@ -87,6 +86,7 @@ class SurveyState extends State<CreateSurvey> {
               },
               textColor: Colors.white,
               padding: const EdgeInsets.all(0.0),
+
               child: Container(
                 width: 200,
                 decoration: const BoxDecoration(

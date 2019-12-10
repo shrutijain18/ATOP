@@ -20,9 +20,9 @@ class ProfMainScreen extends StatelessWidget {
                 );
               },
               textColor: Colors.white,
-              padding: const EdgeInsets.all(0.0),
+              padding: const EdgeInsets.all(1.0),
               child: Container(
-                width: 200,
+                width: 250,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: <Color>[
@@ -34,15 +34,16 @@ class ProfMainScreen extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.all(10.0),
                 child: const Text('Create Survey',
-                    style: TextStyle(fontSize: 20)),
+                    style: TextStyle(fontSize: 20),
+                    textAlign: TextAlign.center),
               ),
             ),
             RaisedButton(
               onPressed: () {},
               textColor: Colors.white,
-              padding: const EdgeInsets.all(0.0),
+              padding: const EdgeInsets.all(1.0),
               child: Container(
-                width: 200,
+                width: 250,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: <Color>[
@@ -53,8 +54,9 @@ class ProfMainScreen extends StatelessWidget {
                   ),
                 ),
                 padding: const EdgeInsets.all(10.0),
-                child: const Text('View Results',
-                    style: TextStyle(fontSize: 20)),
+                child: const Text('See Results',
+                    style: TextStyle(fontSize: 20),
+                    textAlign: TextAlign.center),
               ),
             ),
           ],

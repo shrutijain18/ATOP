@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../student/studentMainScreen.dart';
+import 'package:quiz_project/student/studentMainScreen.dart';
+import '../student/ScanQRCode.dart';
 import '../prof/profMainScreen.dart';
 
 class Homescreen extends StatelessWidget {
@@ -7,7 +8,7 @@ class Homescreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Assess the one who Profess'),
+        title: Text('Assess The One who Profess'), centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -17,13 +18,13 @@ class Homescreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Studentmainscreen()),
+                  MaterialPageRoute(builder: (context) => QRScanner()),
                 );
               },
               textColor: Colors.white,
               padding: const EdgeInsets.all(0.0),
               child: Container(
-                width: 200,
+                width: 250,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: <Color>[
@@ -34,8 +35,9 @@ class Homescreen extends StatelessWidget {
                   ),
                 ),
                 padding: const EdgeInsets.all(10.0),
-                child: const Text('Go as a Student',
-                    style: TextStyle(fontSize: 20)),
+                child: const Text('Student',
+                    style: TextStyle(fontSize: 20),
+                    textAlign: TextAlign.center),
               ),
             ),
             RaisedButton(
@@ -48,7 +50,7 @@ class Homescreen extends StatelessWidget {
               textColor: Colors.white,
               padding: const EdgeInsets.all(0.0),
               child: Container(
-                width: 200,
+                width: 250,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: <Color>[
@@ -59,8 +61,9 @@ class Homescreen extends StatelessWidget {
                   ),
                 ),
                 padding: const EdgeInsets.all(10.0),
-                child: const Text('Go as a Professor',
-                    style: TextStyle(fontSize: 20)),
+                child: const Text('Professor',
+                    style: TextStyle(fontSize: 20),
+                    textAlign: TextAlign.center),
               ),
             ),
             RaisedButton(
@@ -68,7 +71,7 @@ class Homescreen extends StatelessWidget {
               textColor: Colors.white,
               padding: const EdgeInsets.all(0.0),
               child: Container(
-                width: 200,
+                width: 250,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: <Color>[
@@ -79,8 +82,9 @@ class Homescreen extends StatelessWidget {
                   ),
                 ),
                 padding: const EdgeInsets.all(10.0),
-                child:
-                    const Text('Go as a admin', style: TextStyle(fontSize: 20)),
+                child: const Text('Administrator',
+                    style: TextStyle(fontSize: 20),
+                    textAlign: TextAlign.center),
               ),
             ),
           ],
