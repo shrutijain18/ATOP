@@ -39,7 +39,7 @@ class SurveyState extends State<CreateSurvey> {
                 // Save DEPT in database?
               },
               validator: (String value) {
-                return value.contains('@') ? 'Do not use the @ char.' : null;
+                return value.isEmpty ? 'Do not use the @ char.' : null;
               },
             ),
             TextFormField(
@@ -53,7 +53,7 @@ class SurveyState extends State<CreateSurvey> {
                 course = value;
               },
               validator: (String value) {
-                return value.contains('@') ? 'Do not use the @ char.' : null;
+                return value.isEmpty ? 'Do not use the @ char.' : null;
               },
             ),
             TextFormField(
@@ -68,7 +68,7 @@ class SurveyState extends State<CreateSurvey> {
                 print('saved $section');
               },
               validator: (String value) {
-                return value.contains('@') ? 'Do not use the @ char.' : null;
+                return value.isEmpty ? 'Do not use the @ char.' : null;
               },
             ),
             RaisedButton(
