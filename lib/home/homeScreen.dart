@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_project/student/studentMainScreen.dart';
 import '../student/ScanQRCode.dart';
 import '../prof/profMainScreen.dart';
 
