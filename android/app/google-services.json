@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "663933354973",
+    "firebase_url": "https://atop-final-fcb86.firebaseio.com",
+    "project_id": "atop-final-fcb86",
+    "storage_bucket": "atop-final-fcb86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663933354973:android:521680e7f0e2866de5ec34",
+        "android_client_info": {
+          "package_name": "com.example.flutterfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663933354973-j9s3bpiidmsedjmc7t1l71mcsrpe1mfk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkWNkyRsLDwEo25M7Z24GBgVaVpN4zREA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663933354973-j9s3bpiidmsedjmc7t1l71mcsrpe1mfk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

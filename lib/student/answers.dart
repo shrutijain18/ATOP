@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class Answer extends StatelessWidget {
   final Function selectHandler;
   final String answerText;
-
-  Answer(this.selectHandler, this.answerText);
-
+  final String questionText;
+  Answer(this.selectHandler, this.answerText, this.questionText);
   @override
   Widget build(BuildContext context) {
     var container = Container(
@@ -16,13 +16,11 @@ class Answer extends StatelessWidget {
             ListTile(
                 title: Text(answerText),
                 leading: Radio(
-                  value: answerText,
-                  groupValue: 'answerOptions',
-                  onChanged: (val) {
-                    print(val);
-                    selectHandler(val);
-                  },
-                )),
+                    value: answerText,
+                    groupValue: 'answerOptions',
+                    onChanged: (val) {
+                      selectHandler(questionText, val);
+                    })),
           ],
         ));
     return container;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_project/home/homeScreen.dart';
+import 'package:firebase_database/firebase_database.dart';
+import '../home/homeScreen.dart';
 
 import './surveyQuestions.dart';
 
@@ -13,16 +14,18 @@ class Studentmainscreen extends StatefulWidget {
 }
 
 class _StudentmainscreenState extends State<Studentmainscreen> {
+  var responseToSaveToDatabase = new Map();
+
   final _questions = [
     {
       'questionText':
-          'Please rate your overall satisfaction with your Professor.',
+          'Please rate your overall satisfaction with your Professor',
       'answers': [
         'Very Satisfied',
-        'Dissatisfied',
-        'Neutral',
         'Satisfied',
-        'Very Satisfied'
+        'Neutral',
+        'Dissatisfied ',
+        'Very Dissatisfied'
       ],
     },
     {
@@ -58,20 +61,22 @@ class _StudentmainscreenState extends State<Studentmainscreen> {
       'answers': ['1', '2', '3', '4', '5'],
     },
   ];
-
+  GlobalKey<FormState> _key = new GlobalKey();
   final String classCode;
 
   _StudentmainscreenState(this.classCode);
 
   var _questionIndex = 0;
-  void _answerQuestion(val) {
+  void _answerQuestion(questionText, val) {
+    print(questionText);
     print(val);
+    //responseToSaveToDatabase[questionText] = val;
     setState(() {
+      responseToSaveToDatabase[questionText] = val;
       _questionIndex++;
     });
-    //  print("Answer chosen!!");
-    print(_questionIndex);
-    // return _questionIndex;
+    print(responseToSaveToDatabase);
+    // print("abc" + this.classCode);
   }
 
   @override
@@ -79,13 +84,32 @@ class _StudentmainscreenState extends State<Studentmainscreen> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Course Survey'), centerTitle: true,
+            title: Text('Course Survey'),
+            centerTitle: true,
           ),
           body: _questionIndex < _questions.length
               ? Survey(_questions, _questionIndex, _answerQuestion)
               : Center(
                   child: RaisedButton(
                     onPressed: () {
+                      //print('YOU CANT HANDLE THE TRUTH');
+                      //print(responseToSaveToDatabase);
+                      var newString = classCode.split(" ");
+                      responseToSaveToDatabase['Course-Number'] = newString[0];
+                      responseToSaveToDatabase['ProfessorName'] =
+                          newString[1] + " " + newString[2];
+
+                      DatabaseReference ref =
+                          FirebaseDatabase.instance.reference();
+
+                      ref
+                          .child('node-name')
+                          .push()
+                          .set(responseToSaveToDatabase)
+                          .then((v) {
+                        _key.currentState.reset();
+                      });
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Homescreen()),

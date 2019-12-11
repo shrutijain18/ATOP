@@ -7,8 +7,11 @@ class Survey extends StatelessWidget {
   final List<Map<String, Object>> questions;
   final int questionIndex;
   final Function answerQuestion;
-
-  Survey(this.questions, this.questionIndex, this.answerQuestion);
+  Survey(
+    this.questions,
+    this.questionIndex,
+    this.answerQuestion,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,8 @@ class Survey extends StatelessWidget {
       children: [
         QuestionText(questions[questionIndex]['questionText']),
         ...(questions[questionIndex]['answers'] as List<String>).map((answer) {
-          return Answer(answerQuestion, answer);
+          return Answer(
+              answerQuestion, answer, questions[questionIndex]['questionText']);
         }).toList()
       ],
     );

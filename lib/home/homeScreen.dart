@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import '../student/ScanQRCode.dart';
 import '../prof/profMainScreen.dart';
+import '../admin/AdminHomePage.dart';
+import '../student/studentMainScreen.dart';
 
 class Homescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Assess The One who Profess'), centerTitle: true,
+        title: Text('Assess The One who Profess'),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -17,7 +20,9 @@ class Homescreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QRScanner()),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          Studentmainscreen("COMP.5300.201 William Moloney")),
                 );
               },
               textColor: Colors.white,
@@ -66,7 +71,12 @@ class Homescreen extends StatelessWidget {
               ),
             ),
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AdminHomePage()),
+              );
+              },
               textColor: Colors.white,
               padding: const EdgeInsets.all(0.0),
               child: Container(
