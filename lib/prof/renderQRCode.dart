@@ -6,8 +6,9 @@ class RenderQRCode extends StatelessWidget {
   final String dept;
   final String course;
   final String section;
+  final String profName;
 
-  RenderQRCode(this.dept, this.course, this.section);
+  RenderQRCode(this.dept, this.course, this.section, this.profName);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class RenderQRCode extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             QrImage(
-              data: dept + '.' + course + '.' + section,
+              data: dept + '.' + course + '.' + section + ', ' + profName,
               version: QrVersions.auto,
               size: 250.0,
             ),

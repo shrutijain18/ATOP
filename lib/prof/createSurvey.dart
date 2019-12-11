@@ -15,6 +15,7 @@ class SurveyState extends State<CreateSurvey> {
   String dept;
   String course;
   String section;
+  String profName;
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -59,12 +60,27 @@ class SurveyState extends State<CreateSurvey> {
             TextFormField(
               decoration: const InputDecoration(
                 icon: Icon(Icons.input),
-                hintText: 'Section',
-                labelText: '201',
+                hintText: '201',
+                labelText: 'Section',
               ),
               onSaved: (String value) {
                 // Save section in database
                 section = value;
+                print('saved $section');
+              },
+              validator: (String value) {
+                return value.isEmpty ? 'Field is required' : null;
+              },
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                icon: Icon(Icons.input),
+                hintText: 'First Last',
+                labelText: 'Professor Name',
+              ),
+              onSaved: (String value) {
+                // Save section in database
+                profName = value;
                 print('saved $section');
               },
               validator: (String value) {
@@ -80,7 +96,7 @@ class SurveyState extends State<CreateSurvey> {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            RenderQRCode(dept, course, section)),
+                            RenderQRCode(dept, course, section, profName)),
                   );
                 }
               },

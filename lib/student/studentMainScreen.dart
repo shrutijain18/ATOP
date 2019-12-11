@@ -79,7 +79,7 @@ class _StudentmainscreenState extends State<Studentmainscreen> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text(classCode + ' Survey'), centerTitle: true,
+            title: Text('Course Survey'), centerTitle: true,
           ),
           body: _questionIndex < _questions.length
               ? Survey(_questions, _questionIndex, _answerQuestion)
@@ -105,7 +105,7 @@ class _StudentmainscreenState extends State<Studentmainscreen> {
                         ),
                       ),
                       padding: const EdgeInsets.all(10.0),
-                      child: const Text('Tap to Finish',
+                      child: const Text('Tap to Submit',
                           style: TextStyle(fontSize: 20),
                           textAlign: TextAlign.center),
                     ),

@@ -38,7 +38,7 @@ class _QRScannerState extends State<QRScanner> {
           Expanded(
             flex: 1,
             child: Center(
-              child: Text('Course: $qrText', style: TextStyle(fontSize: 25)),
+              child: Text('$qrText', style: TextStyle(fontSize: 25)),
             ),
           ),
           Expanded(
