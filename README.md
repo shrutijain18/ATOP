@@ -17,4 +17,8 @@ ATOP stands for Assess The One Who Profess. It is a mobile application designed 
 <img src="https://github.com/shrutijain18/ATOP/blob/master/Images/Architecture.png" height="400" width="400">
 
 ## Instructions for how to develop, use, and test the code.
-:mega: To be disclosed
+Steps to run the code
+1. Clone the repository
+2. run "flutter pub get"
+3. run "flutter run" 
+
